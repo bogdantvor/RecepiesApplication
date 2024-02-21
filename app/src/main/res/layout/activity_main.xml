@@ -18,14 +18,20 @@
         <Button
             android:id="@+id/btnCategory"
             style="@style/StyleNavButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
+            android:layout_weight="1"
             android:backgroundTint="@color/category_button_color"
-            android:text="@string/button_category" />
+            android:text="@string/category" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFavorites"
             style="@style/StyleNavButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
+            android:layout_weight="1"
             android:backgroundTint="@color/favorites_button_color"
             android:text="@string/button_favorites"
             app:icon="@drawable/ic_heart_empty"
