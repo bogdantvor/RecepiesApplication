@@ -8,28 +8,49 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/main_16"
         android:layout_marginEnd="@dimen/main_16"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btnCategory"
             style="@style/StyleNavButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
+            android:layout_weight="1"
             android:backgroundTint="@color/category_button_color"
-            android:text="@string/button_category" />
+            android:text="@string/title_category" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFavorites"
             style="@style/StyleNavButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
+            android:layout_weight="1"
             android:backgroundTint="@color/favorites_button_color"
-            android:text="@string/button_favorites"
+            android:text="@string/title_favorites"
             app:icon="@drawable/ic_heart_empty"
             app:iconGravity="textEnd" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginBottom="@dimen/main_8"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
