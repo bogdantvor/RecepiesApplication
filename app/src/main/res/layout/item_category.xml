@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="160dp"
+    android:layout_height="220dp"
+    android:layout_marginHorizontal="@dimen/main_8"
+    android:layout_marginVertical="@dimen/main_8"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="@dimen/main_8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="160dp"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_8"
+            android:layout_marginTop="@dimen/main_8"
+            android:fontFamily="@font/montserrat_alternates_semi_bold"
+            android:lineHeight="16sp"
+            android:text="Заголовок"
+            android:textAllCaps="true"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_8"
+            android:layout_marginTop="@dimen/main_8"
+            android:fontFamily="@font/montserrat_medium"
+            android:lineHeight="16sp"
+            android:text="Описание"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
