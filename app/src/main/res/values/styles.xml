@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="StyleTitle14" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/ts_14</item>
+        <item name="lineHeight">@dimen/line_height_16</item>
         <item name="fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="textAllCaps">true</item>
         <item name="android:textColor">@color/white</item>
     </style>
-    
+
     <style name="StyleNavButton" parent="Widget.Material3.Button">
         <item name="android:textAppearance">@style/StyleTitle14</item>
-        <item name="android:paddingVertical">10dp</item>
-        <item name="android:paddingHorizontal">20dp</item>
-        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingVertical">@dimen/padding_10</item>
+        <item name="android:paddingHorizontal">@dimen/padding_20</item>
+        <item name="cornerRadius">@dimen/radius_8</item>
     </style>
-    
+
+    <style name="StyleTitle20" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/ts_20</item>
+        <item name="fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textColor">@color/title_title</item>
+        <item name="lineHeight">@dimen/line_height_24.38</item>
+        <item name="android:padding">@dimen/padding_10</item>
+    </style>
+
 </resources>

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="main_16">16dp</dimen>
-    <dimen name="main_8">8dp</dimen>
     <dimen name="zero">0dp</dimen>
 
+    <dimen name="ts_12">12sp</dimen>
+    <dimen name="ts_14">14sp</dimen>
+    <dimen name="ts_20">20sp</dimen>
+
+    <dimen name="line_height_16">16sp</dimen>
+    <dimen name="line_height_24.38">24.38sp</dimen>
+
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+
+    <dimen name="radius_8">8dp</dimen>
+
+    <dimen name="size_130">130dp</dimen>
+    <dimen name="size_160">160dp</dimen>
+    <dimen name="size_224">224dp</dimen>
 </resources>
