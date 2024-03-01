@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/main_8"
-    android:layout_marginVertical="@dimen/main_8"
+    android:layout_marginHorizontal="@dimen/margin_8"
+    android:layout_marginVertical="@dimen/margin_8"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="@dimen/main_8">
+    app:cardCornerRadius="@dimen/radius_8">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,17 +17,18 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="160dp"
-            android:layout_height="130dp"
+            android:layout_width="@dimen/size_160"
+            android:layout_height="@dimen/size_130"
             android:scaleType="centerCrop"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars"
+            android:contentDescription="@string/category_logo" />
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/main_8"
-            android:layout_marginTop="@dimen/main_8"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
             android:fontFamily="@font/montserrat_alternates_semi_bold"
             android:lineHeight="@dimen/line_height_16"
             android:textAllCaps="true"
@@ -38,8 +39,8 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/main_8"
-            android:layout_marginTop="@dimen/main_8"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
             android:fontFamily="@font/montserrat_medium"
             android:lineHeight="@dimen/line_height_16"
             android:textSize="@dimen/ts_12"
