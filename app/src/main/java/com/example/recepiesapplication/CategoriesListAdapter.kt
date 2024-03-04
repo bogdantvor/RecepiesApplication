@@ -77,21 +77,10 @@ class CategoriesListAdapter :
         return ViewHolder(view)
     }
 
-override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-    val category = dataSet[position]
-
-    holder.titleTextView.text = category.title
-    holder.descriptionTextView.text = category.description
-
-    // Пробуем загрузить изображение из ассетов
-    val imageDrawable = AssetUtils.loadImageDrawableFromAssets(context, category.imageUrl)
-    if (imageDrawable != null) {
-        holder.imageView.setImageDrawable(imageDrawable)
-    } else {
-        holder.imageView.setImageDrawable(null)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val category = dataSet[position]
+        holder.bind(category)
     }
-}
-
 
     override fun getItemCount() = dataSet.size
 
@@ -101,9 +90,14 @@ override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val descriptionTextView: TextView = itemView.findViewById(R.id.tv_description)
 
         fun bind(category: Category) {
-            imageView.setImageResource(category.imageUrl)
             titleTextView.text = category.title
             descriptionTextView.text = category.description
+            val imageDrawable = AssetUtils.loadImageDrawableFromAssets(context, category.imageUrl)
+            if (imageDrawable != null) {
+                imageView.setImageDrawable(imageDrawable)
+            } else {
+                imageView.setImageDrawable(null)
+            }
         }
     }
 } */
