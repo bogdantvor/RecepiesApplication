@@ -1,5 +1,7 @@
 package com.example.recepiesapplication
 
+import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,43 +10,37 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import models.Category
 
+
 class CategoriesListAdapter(private val dataSet: List<Category>) :
     RecyclerView.Adapter<CategoriesListAdapter.ViewHolder>() {
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder)
-     */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageView: ImageView,
-        val titleTextView: TextView
-        val descriptionTextView: TextView
-
-        init {
-            imageView = view.findViewById(R.id.image_category)
-            titleTextView = view.findViewById(R.id.tv_title)
-            descriptionTextView = view.findViewById(R.id.tv_description)
-        }
+        val imageView: ImageView = view.findViewById(R.id.image_category)
+        val titleTextView: TextView = view.findViewById(R.id.tv_title)
+        val descriptionTextView: TextView = view.findViewById(R.id.tv_description)
     }
 
-    // Create new views (invoked by the layout manager)
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        // Create a new view, which defines the UI of the list item
-        val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.item_category, viewGroup, false)
-
+        val inflater = LayoutInflater.from(viewGroup.context)
+        val view = inflater.inflate(R.layout.item_category, viewGroup, false)
         return ViewHolder(view)
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        val category: Category = dataSet[position]
+        viewHolder.titleTextView.text = category.title
+        viewHolder.descriptionTextView.text = category.description
 
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
-        viewHolder.titleTextView.text = dataSet[position]
+        val drawable =
+            try {
+                Drawable.createFromStream(viewHolder.itemView.context.assets.open(category.imageUrl), null)
+            } catch (e: Exception) {
+                Log.d("!!!", "Image not found: ${category.imageUrl}")
+                null
+            }
+        viewHolder.imageView.setImageDrawable(drawable)
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
-
 }

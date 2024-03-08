@@ -35,10 +35,8 @@ class CategoriesListFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        val categoriesAdapter = CategoriesListAdapter()
-        val categoriesList = BackendSingleton.getCategories()
+        val categoriesAdapter = CategoriesListAdapter(BackendSingleton.getCategories())
         binding.rvCategories.adapter = categoriesAdapter
-        categoriesAdapter.setCategories(categoriesList)
     }
 
 }
