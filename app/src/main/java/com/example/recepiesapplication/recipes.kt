@@ -12,7 +12,5 @@ object STUB {
         Category(id = 5, title = "Салаты", description = "Хрустящий калейдоскоп под соусом вдохновения", imageUrl = "salad.png"),
     )
 
-    fun getCategories(): List<Category> {
-        return categories
-    }
+    fun getCategories(): List<Category> = categories
 }

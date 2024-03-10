@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.recepiesapplication.databinding.FragmentListCategoriesBinding
-import models.BackendSingleton
 
 class CategoriesListFragment : Fragment() {
 
@@ -35,7 +34,7 @@ class CategoriesListFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        val categoriesAdapter = CategoriesListAdapter(BackendSingleton.getCategories())
+        val categoriesAdapter = CategoriesListAdapter(STUB.getCategories())
         binding.rvCategories.adapter = categoriesAdapter
     }
 
