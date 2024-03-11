@@ -20,7 +20,7 @@
         <item name="android:textSize">@dimen/ts_20</item>
         <item name="fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="textAllCaps">true</item>
-        <item name="android:textColor">@color/title_title</item>
+        <item name="android:textColor">@color/title_title_color</item>
         <item name="lineHeight">@dimen/line_height_24.38</item>
         <item name="android:padding">@dimen/padding_10</item>
     </style>

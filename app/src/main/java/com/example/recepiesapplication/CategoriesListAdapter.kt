@@ -13,6 +13,15 @@ import models.Category
 
 class CategoriesListAdapter(private val dataSet: List<Category>) :
     RecyclerView.Adapter<CategoriesListAdapter.ViewHolder>() {
+    interface OnItemClickListener {
+        fun onItemClick(category: Category)
+    }
+
+    private var itemClickListener: OnItemClickListener? = null
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        itemClickListener = listener
+    }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.imageCategory)
@@ -40,6 +49,10 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
                 null
             }
         viewHolder.imageView.setImageDrawable(drawable)
+
+        viewHolder.itemView.setOnClickListener {
+            itemClickListener?.onItemClick(category)
+        }
     }
 
     override fun getItemCount() = dataSet.size
