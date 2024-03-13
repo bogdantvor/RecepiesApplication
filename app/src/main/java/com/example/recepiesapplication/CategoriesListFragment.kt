@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.example.recepiesapplication.databinding.FragmentListCategoriesBinding
-import models.Category
+import models.ARG_CATEGORY_ID
 
 class CategoriesListFragment : Fragment() {
 
@@ -39,24 +41,22 @@ class CategoriesListFragment : Fragment() {
         binding.rvCategories.adapter = categoriesAdapter
 
         categoriesAdapter.setOnItemClickListener(object : CategoriesListAdapter.OnItemClickListener {
-            override fun onItemClick(category: Category) {
-                openRecipesByCategoryId(category.id)
+            override fun onItemClick(categoryId: Int) {
+                openRecipesByCategoryId(categoryId)
             }
         })
     }
 
     private fun openRecipesByCategoryId(categoryId: Int) {
         val recipesListFragment = RecipesListFragment().apply {
-            arguments = Bundle().apply {
-                putString("categoryId", categoryId.toString())
-            }
+            arguments = bundleOf(ARG_CATEGORY_ID to categoryId)
         }
 
-        parentFragmentManager.beginTransaction().apply {
+        parentFragmentManager.commit {
             replace(R.id.mainContainer, recipesListFragment)
             addToBackStack(null)
-            commit()
         }
     }
+
 
 }
