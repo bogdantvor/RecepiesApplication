@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.recepiesapplication.databinding.FragmentListCategoriesBinding
 import models.ARG_CATEGORY_ID
+import models.ARG_CATEGORY_IMAGE_URL
+import models.ARG_CATEGORY_NAME
 
 class CategoriesListFragment : Fragment() {
 
@@ -48,8 +49,18 @@ class CategoriesListFragment : Fragment() {
     }
 
     private fun openRecipesByCategoryId(categoryId: Int) {
+        val category = STUB.getCategoryById(categoryId)
+        val categoryName = category?.title ?: ""
+        val categoryImageUrl = category?.imageUrl ?: ""
+
+        val bundle = Bundle().apply {
+            putInt(ARG_CATEGORY_ID, categoryId)
+            putString(ARG_CATEGORY_NAME, categoryName)
+            putString(ARG_CATEGORY_IMAGE_URL, categoryImageUrl)
+        }
+
         val recipesListFragment = RecipesListFragment().apply {
-            arguments = bundleOf(ARG_CATEGORY_ID to categoryId)
+            arguments = bundle
         }
 
         parentFragmentManager.commit {
